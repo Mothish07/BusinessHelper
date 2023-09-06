@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+<!--Bootstrap Linker-->
+{% load static %}
+<link rel="stylesheet" href="{% static 'bootstrapAsserts/css/bootstrap.min.css'%}">
+<!--fonts cdn-->
+<script src="https://kit.fontawesome.com/7c2426f918.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="vh-100 bg-image" style="background-color:#34AEA5;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                    <div class="card" style="border-radius: 1rem;">
+                            <div class="card-body p-4 lg-5 text-black">
+                                <!--Header-->
+                               <div class="d-flex align-items-center mb-3 pb-1">
+                                        <span class="h5 fw-bold mb-0"><img src="{% static 'images/logoImage.jpg' %}" alt="logo Image" class="img-fluid"
+                                                style="height: 100px; width: 100px;" /> Business Helper</span>
+                                    </div>
+                                <!--End Header-->
+                                <!-- Alert Message-->
+                                {% for message in messages %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  <strong>{{message}}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                                    </button>
+                                </div>
+                                {% endfor %}
+                                <!--Icon-->
+                                <div class="h3 p-2 text-center" style="color: #34AEA5;">
+                                    <i class="fa fa-user" aria-hidden="true" style="color: black;"></i>  Create An Account
+                                </div>
+                                <!--End Icon-->
+                                <!--Content-->
+                                <form action="/signup" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-outline mb-4 " style="position: relative;">
+                                        <label class="form-label" for="">First Name</label>
+                                     <input type="text" id="fname" name="fname" class="form-control form-control-lg" placeholder="Enter your First Name" />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="">Last Name</label>
+                                        <input type="text" id="lname" name="lname" class="form-control form-control-lg " placeholder="Enter your Last Name" />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="">UserName</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text p-2">@</span>
+                                            </div>
+                                        <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Enter your User Name" />   
+                                    </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="">Your Email</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <i class="fa fa-envelope input-group-text p-3 " aria-hidden="true"></i>
+                                         </div>
+                                        <input type="email" id="email" name="email" class="form-control form-control-lg"placeholder="Enter your current email address">
+                                        
+                                    </div>
+                                   
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="">Password</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <i class="fa fa-unlock input-group-text p-3" aria-hidden="true"></i>
+                                            </div>
+                                        
+                                            <input type="password" id="passwd" name="passwd" class="form-control form-control-lg" placeholder="Enter your password" />   
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form3Example4cdg">Confirm your password</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <i class="fa fa-check input-group-text p-3" aria-hidden="true"></i>
+                                            </div>
+                                            <input type="password" id="cpasswd" name="cpasswd" class="form-control form-control-lg"
+                                                placeholder="Reconfirm your password" />
+                                        </div>
+                                      
+                                    </div>
+
+                                
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit"
+                                        class="btn btn-info btn-block btn-lg gradient-custom-4 text-body">Create   <i class="fa fa-user-plus" aria-hidden="true"></i></button>
+                                    </div>
+
+                                    <p class="text-center text-muted mt-5 mb-0">Already have an account? <a href="/signin"
+                                        class="fw-bold text-body"><u>Login here <i class="fa fa-sign-in" aria-hidden="true"></i></u></a></p>
+
+                                </form>
+                                <!--End Content-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!--Bootstrap JavaScripts Linker-->
+<script src="{% static 'bootstrapAsserts/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

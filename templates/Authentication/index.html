@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Helper</title>
+   <!--Bootstrap linker-->
+   {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrapAsserts/css/bootstrap.min.css'%}">
+    <!--fonts cdn-->
+    <script src="https://kit.fontawesome.com/7c2426f918.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="vh-100" style="background-color: #34AEA5;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="{% static 'images/loginPageImage.webp' %}"
+                                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+                                <!--Header-->
+                             <div class="d-flex align-items-center mb-3 pb-1">
+                                        <span class="h3 fw-bold mb-0"><img src="{% static 'images/logoImage.jpg' %}" alt="logo Image" class="img-fluid" style="height: 100px; width: 100px;" />Business Helper</span>
+                                    </div>
+                                <!--End Header-->
+                                <!--Alert-->
+                                <div class="row">
+                                    <div class="col md-4">
+                                        {% for message in messages %}
+                                        
+                                        <div class="alert alert-light alert-dismissible " role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <i class="fa fa-check" aria-hidden="true"></i> <strong>{{message}}</strong>
+                                            </div>
+                                         
+                                             {% endfor %}
+                                    </div>
+                                </div>
+                                    
+                                <!--Content-->
+                                <form action="/signin" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="">Username</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                               <span class="input-group-text p-3">@</span>
+                                            </div>
+                                            <input type="text" id="username" name="username" class="form-control form-control-lg" />
+                                        </div>
+                                       
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="">Password</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <i class="fa fa-unlock input-group-text p-3" aria-hidden="true"></i>
+                                            </div>
+                                            <input type="password" id="passwd" name="passwd" class="form-control form-control-lg" />
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-info btn-lg btn-block" type="submit">Login  <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                                       
+                                    </div>
+                                    <!--End Content-->
+                                    <!--Footer-->
+                                    <a class="small text-muted" href="#!">Forgot password?</a>
+                                    <p class="text-center text-muted mt-5 mb-0" style="color: #393f81;">Don't Have an Account? <a href="/signup"style="color: #34aea5;">Create Now! <i class="fa fa-user-plus" aria-hidden="true"></i></a></p>
+                                </form>
+                                    <!--End Footer-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--Bootstrap JavaScript Linker-->
+<script src="{% static 'bootstrapAsserts/js/bootstrap.min.js' %}"></script>
+<script>
+    $('.alert').alert('close')
+</script>
+</body>
+</html>

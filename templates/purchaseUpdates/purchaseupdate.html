@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Update Page</title>
+    <!--Bootstrap  css Linker-->
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrapAsserts/css/bootstrap.min.css'%}">
+    <!--font CDN-->
+    <script src="https://kit.fontawesome.com/7c2426f918.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="vh-100 " style="background-color:#34AEA5;">
+
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-4 lg-5 text-black">
+                            <!--Header-->
+                            <div class="row">
+                                <div class="col md-8">
+                                    <span class="h6 fw-bold mb-0">
+                                        <img src="{% static 'images/logoImage.jpg' %}" alt="logo Image" class="img-fluid"
+                                            style="height: 100px; width: 100px;" />Business Helper
+                                    </span>
+                                </div>
+                               
+                            </div>
+
+                            <div class="row">
+                              
+                                <div class="col md-2 h5 text-right">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    {{date}}
+                                </div>
+                            </div>
+                            <!--End Header-->
+                            <!--Navigator-->
+                            <div class="row ">
+                                <div class="col ">
+                                    <button class="btn btn-info  btn-small float-left" type="button"><a href="dailyupdate" style="color: white;"><i class="fa fa-step-backward" aria-hidden="true"></i></a></button>
+                                </div>
+                            </div>
+                            <!--End Navigator-->
+                            &nbsp;
+                            <div class="row d-flex justify-content-center align-items-center h-100 border rounded p-5"
+                                style="border-color: seashell;">
+                                <!--Purchase Update-->
+
+                                <h4 class="p-4">Purchase Updates</h4>
+                                <form action="" method="post">
+                                    {%csrf_token%}
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="">Shop Name</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <i class="fa fa-shopping-cart input-group-text p-3" aria-hidden="true"></i>
+                                            </div>
+                                            <input type="text" id="shopName" name="shopName" class="form-control form-control-lg" />
+                                        </div>
+                                        
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="">Price</label>
+                                        <div class="input-group">
+                                            <div class="input-grout-prepend">
+                                                <i class="fa fa-inr input-group-text p-3" aria-hidden="true"></i>
+                                            </div>
+                                            <input type="number" id="price" name="price" class="form-control form-control-lg" />
+                                        </div>
+                                        
+
+                                    </div>
+
+                                <div class="pt-1 mb-4">
+                                    <button class="btn btn-info btn-lg btn-block" type="submit">Update <i class="fa fa-pencil"></i></button>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--Bootrap JavaScript Linker-->
+    <script src="{% static 'bootstrapAsserts/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

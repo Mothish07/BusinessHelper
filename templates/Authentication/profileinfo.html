@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Helper - Profile</title>
+    <!--Bootstrap css Linker-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrapAsserts/css/bootstrap.min.css'%}">
+
+    <!--fonts cdn-->
+    <script src="https://kit.fontawesome.com/7c2426f918.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="vh-100 " style="background-color:#34AEA5;">
+
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-4 lg-5 text-black">
+                            <!--Header-->
+                            <div class="row">
+                                <div class="col md-8">
+                                    <span class="h6 fw-bold mb-0">
+                                        <img src="{% static 'images/logoImage.jpg' %}" alt="logo Image" class="img-fluid"
+                                            style="height: 100px; width: 100px;" />Business Helper
+                                    </span>
+                                </div>
+                                <div class="col md-4 text-right">
+                                    <button type="submit"
+                                        class="btn btn-info btn-right btn-small gradient-custome-4 text-body"><a
+                                            href="/signout" style="color: white;"> <i class="fa fa-sign-out" aria-hidden="true"></i> LOGOUT</a></button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col md-10 h4" style="color:#34AEA5;">
+                                    Hello {{fname}}!
+                                </div>
+                                <div class="col md-2 h5 text-right">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    {{date}}
+                                </div>
+
+                            </div>
+                            <!--End Header-->
+                            <!--Navigator-->
+                            <div class="row ">
+                               
+                             
+                                <div class="col md-2 ">
+                                    <button class="btn btn-info  btn-small float-right" type="button"><a href="dailyupdate" style="color: white;"><i class="fa fa-step-forward" aria-hidden="true"></i></a></button>
+                                </div> 
+                            </div>
+                            <!--End Navigator-->
+                            &nbsp;
+                            <div class="row  justify-content-center align-items-center h-100 border rounded p-5"
+                                style="border-color: seashell;">
+                                
+
+                                <!--Content -->
+                                
+                               <div><h4 class="p-4 ">PROFILE INFORMATION</h4></div> 
+                                &nbsp;
+                                
+                                <div class="h6 p-4 col-8">Name : {{fname}} {{lname}}</div>
+                                &nbsp;
+
+                                <div class="h6 p-4 col-8">User name : {{username}}</div>
+                                &nbsp;
+
+                                <div class="h6 p-4 col-8"style="font-size: 75%" ><i class="fa fa-envelope" aria-hidden="true"></i><a href="#">{{email}}</a></div>
+                                
+                                &nbsp;
+                                &nbsp;
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button class="btn btn-info btn-right btn-small " type="button"><a href="#"
+                                                style="color: white;">DailyUpdate Analysis</a></button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-info btn-right btn-small  " type="button"><a href="#"
+                                                style="color: white;">Purchase Analysis</a></button>
+                                    </div>
+                                </div>
+
+                                <!--End Content-->
+
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+</body>
+<script src="{% static 'bootstrapAsserts/js/bootstrap.min.js' %}"></script>
+
+</html>
